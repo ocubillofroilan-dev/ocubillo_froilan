@@ -131,7 +131,7 @@ const TI = {
   fix: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg>',
 };
 $("#tl").innerHTML =
-  `<h3>Experience</h3><div class="tlx">${EXP.map(([d, t, g, s, b]) => `<div class="r"><div class="d">${d}</div><div class="bd"><div class="hd"><b>${t}</b></div><small>${s}</small><ul>${b.map((x) => `<li>${x}</li>`).join("")}</ul></div></div>`).join("")}</div>` +
+  `<h3>Work history</h3><div class="tlx">${EXP.map(([d, t, g, s, b]) => `<div class="r"><div class="d">${d}</div><div class="bd"><div class="hd"><b>${t}</b></div><small>${s}</small><ul>${b.map((x) => `<li>${x}</li>`).join("")}</ul></div></div>`).join("")}</div>` +
   `<h3>Education</h3><div class="edm"><div class="d">2020 – 2024</div><div><h4>BS Computer Engineering</h4><small>Pamantasan ng Lungsod ng San Pablo, graduated July 2024</small></div></div>` +
   `<p class="edo"><em>Earlier</em><span>Senior High School, TVL Industrial Arts, Luzonian Center of Excellence for Science and Technology, with honors (2018&nbsp;–&nbsp;2020)</span><span>Junior High School, Dayap National High School, with honors (2014&nbsp;–&nbsp;2018)</span><span>Elementary School, Dayap Elementary School, Annex (2008&nbsp;–&nbsp;2014)</span></p>` +
   `<h3>TESDA NC II Training: Computer Systems Servicing</h3><div class="td">${TD.map(([k, t]) => `<div class="tc"><i>${TI[k]}</i><div><b>${t}</b><span class="tagc">NC II</span></div></div>`).join("")}</div><a class="tlk" href="#certs">View certificates <span aria-hidden="true">&rarr;</span></a>`;
@@ -176,10 +176,12 @@ const SK = [
   [
     "Languages",
     [
+      ["Python", "python", "#3776AB"],
+      ["Go", "go", "#00ADD8"],
+      ["JavaScript", "js", "#F7DF1E"],
+      ["Dart", "dart", "#0175C2"],
       ["Java", "java", "#E76F00"],
       ["C++", "cpp", "#00599C"],
-      ["Dart", "dart", "#0175C2"],
-      ["Python", "python", "#3776AB"],
     ],
   ],
   [
@@ -445,7 +447,7 @@ const C = [
   ["Top Performer and Top QA Performer, October and November", "Nextvas"],
   ["On-the-Job Training: 400 hours completed", "Furukawa Automotive Systems"],
   ["Perfect Attendance, On-the-Job Training", "Furukawa Automotive Systems"],
-  ["TESDA National Certificate - Computer System Servicing", "TESDA"],
+  ["TESDA National Certificate - Computer Systems Servicing", "TESDA"],
   ["Go (Golang)", "Coddy Tech", "Go.png"],
   ["Dart", "Coddy Tech", "Dart.png"],
   ["JavaScript", "freeCodeCamp", "fcc-javascript.png"],
@@ -573,24 +575,15 @@ stk.addEventListener(
 );
 layout();
 paint();
-let ct = null,
-  ht = null;
+let ct = null;
 stk.addEventListener("click", () => {
   clearTimeout(ct);
   ct = setTimeout(() => go(1), 250);
 });
 stk.addEventListener("dblclick", () => {
   clearTimeout(ct);
-  clearTimeout(ht);
   openFS(cur);
 });
-stk.addEventListener("pointerenter", (e) => {
-  if (e.pointerType !== "mouse") return;
-  clearTimeout(ht);
-  ht = setTimeout(() => go(1), 220);
-});
-stk.addEventListener("pointerleave", () => clearTimeout(ht));
-stk.addEventListener("pointerdown", () => clearTimeout(ht));
 stk.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " " || e.key === "ArrowRight") {
     e.preventDefault();

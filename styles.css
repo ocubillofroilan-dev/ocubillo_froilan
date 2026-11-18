@@ -50,7 +50,7 @@ h1,
 h2,
 h3,
 .s {
-  font-family: Newsreader, Georgia, serif;
+  font-family: var(--pf);
   font-weight: 400;
   line-height: 1.15;
 }
@@ -98,9 +98,7 @@ h2 {
   margin-right: 46px;
   white-space: nowrap;
   font:
-    italic 1.3rem Newsreader,
-    Georgia,
-    serif;
+    italic 1.3rem var(--pf);
   color: var(--mu);
 }
 .lg i {
@@ -140,9 +138,7 @@ h2 {
 }
 .eb b {
   font:
-    italic 400 1.5rem/1 Newsreader,
-    Georgia,
-    serif;
+    italic 400 1.5rem/1 var(--pf);
   letter-spacing: 0;
 }
 .eb::after {
@@ -193,8 +189,7 @@ header .w {
 }
 .logo {
   font:
-    500 1.25rem Newsreader,
-    serif;
+    500 1.25rem var(--pf);
   white-space: nowrap;
 }
 nav {
@@ -395,8 +390,7 @@ h2.in::after {
   background: var(--bg);
   box-shadow: 0 14px 34px -14px rgba(27, 26, 23, 0.4);
   font:
-    italic 2.2rem Newsreader,
-    serif;
+    italic 2.2rem var(--pf);
   color: var(--sage);
 }
 .hp::after {
@@ -434,8 +428,7 @@ h2.in::after {
 .px b {
   display: block;
   font:
-    italic 400 clamp(1.9rem, 4.4vw, 2.6rem)/1 Newsreader,
-    serif;
+    italic 400 clamp(1.9rem, 4.4vw, 2.6rem)/1 var(--pf);
   color: var(--sage);
 }
 .px span {
@@ -529,9 +522,7 @@ h2.in::after {
   display: grid;
   place-items: center;
   font:
-    italic 5rem Newsreader,
-    Georgia,
-    serif;
+    italic 5rem var(--pf);
   color: var(--sage);
 }
 .ab img {
@@ -666,9 +657,7 @@ h2.in::after {
 }
 .edm h4 {
   font:
-    400 1.7rem/1.2 Newsreader,
-    Georgia,
-    serif;
+    400 1.7rem/1.2 var(--pf);
 }
 .edm small {
   margin-top: 6px;
@@ -903,8 +892,7 @@ h2.in::after {
   display: grid;
   place-items: center;
   font:
-    italic 4rem Newsreader,
-    serif;
+    italic 4rem var(--pf);
   color: var(--sage);
 }
 .pm img {
@@ -968,9 +956,7 @@ h2.in::after {
 }
 .pm .ph2 span {
   font:
-    italic 4rem/1 Newsreader,
-    Georgia,
-    serif;
+    italic 4rem/1 var(--pf);
   color: var(--sage);
 }
 .pm .ph2 small {
@@ -1030,8 +1016,7 @@ h2.in::after {
   align-items: baseline;
   gap: 10px;
   font:
-    italic 400 clamp(3.4rem, 8vw, 5.2rem)/1 Newsreader,
-    serif;
+    italic 400 clamp(3.4rem, 8vw, 5.2rem)/1 var(--pf);
   color: var(--sage);
 }
 .cno small {
@@ -1218,9 +1203,7 @@ h2.in::after {
 }
 .cf b {
   font:
-    400 clamp(1.15rem, 2.6vw, 1.7rem)/1.2 Newsreader,
-    Georgia,
-    serif;
+    400 clamp(1.15rem, 2.6vw, 1.7rem)/1.2 var(--pf);
 }
 .cfs {
   display: grid;
@@ -1268,9 +1251,7 @@ h2.in::after {
 }
 .fsb b {
   font:
-    400 1.2rem Newsreader,
-    Georgia,
-    serif;
+    400 1.2rem var(--pf);
 }
 #fs .btn {
   color: #f1eee6;
@@ -1324,8 +1305,7 @@ h2.in::after {
   display: inline-block;
   max-width: 100%;
   font:
-    italic clamp(1.15rem, 5.4vw, 2.2rem) Newsreader,
-    serif;
+    italic clamp(1.15rem, 5.4vw, 2.2rem) var(--pf);
   border-bottom: 1px solid var(--ink);
   overflow-wrap: anywhere;
   transition:
@@ -1552,7 +1532,7 @@ h2,
 .tagc,
 .px b,
 #hero h1 {
-  font-family: Silkscreen, "Courier New", monospace;
+  font-family: var(--pf);
   font-weight: 400;
   font-style: normal;
 }
@@ -1638,8 +1618,7 @@ h2 {
 }
 .hint {
   font:
-    0.7rem Silkscreen,
-    monospace;
+    0.7rem var(--pf);
   color: var(--mu);
   margin-bottom: 22px;
 }
@@ -1657,7 +1636,7 @@ h2 {
 
 /* ===== Pixel theme v2 ===== */
 :root {
-  --pf: "Pixelify Sans", "Silkscreen", monospace;
+  --pf: "Pixelify Sans", monospace;
   --grid:
     linear-gradient(var(--ln) 1px, transparent 1px),
     linear-gradient(90deg, var(--ln) 1px, transparent 1px);
@@ -1934,8 +1913,15 @@ dialog {
   max-width: 330px;
   justify-self: center;
 }
+/* keep the window the same size, make the character smaller and centered inside it */
+.win {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 5 / 7;
+}
 .win .sc {
-  width: min(82%, 270px);
+  width: min(58%, 190px);
+  margin: auto;
 }
 .wb span {
   white-space: nowrap;
@@ -2005,4 +1991,94 @@ dialog {
   width: 100%;
   max-height: 70vh;
   object-fit: contain;
+}
+/* Pixelify Sans joins "fi" and "fl" into a glyph that looks like "A" (CertiAcates, Arst day, workAows). Turn ligatures off. */
+* {
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0, "clig" 0 !important;
+}
+/* one pixel font everywhere: former serif and italic text now uses Pixelify Sans, upright */
+.em,
+.cno,
+.abph,
+.pm .ph2 span,
+.cf b,
+.fsb b,
+.tagc,
+.hint {
+  font-style: normal;
+}
+/* About is now short; the experience block has its own section */
+#about .ab {
+  margin-bottom: 0;
+}
+#experience h2 {
+  margin-bottom: 40px;
+}
+/* certificate hint */
+.cl .hint {
+  margin: 18px 0 0;
+  font-size: 0.85rem;
+}
+/* six nav links: wider header, tighter links on mid-size screens, menu button on small tablets */
+header .w {
+  max-width: 1040px;
+}
+@media (min-width: 821px) and (max-width: 1100px) {
+  nav {
+    gap: 16px;
+  }
+  nav a {
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 821px) and (max-width: 900px) {
+  #burger {
+    display: block;
+  }
+  .logo {
+    margin-right: auto;
+  }
+  header .w {
+    gap: 6px;
+  }
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    padding: 6px 24px 16px;
+    border-bottom: 1px solid var(--ln);
+    display: none;
+  }
+  nav.on {
+    display: flex;
+  }
+  nav a {
+    padding: 12px 0;
+    font-size: 1.05rem;
+  }
+}
+/* mobile and tablet hero: center the text, stats, buttons, icons and note under the character window */
+@media (max-width: 820px) {
+  #hero {
+    text-align: center;
+  }
+  #hero .tag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #hero .px {
+    justify-content: center;
+  }
+  #hero .px div,
+  #hero .px div:first-child {
+    padding: 2px 10px;
+  }
+  #hero .row {
+    justify-content: center;
+  }
 }
