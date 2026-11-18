@@ -2082,3 +2082,9 @@ header .w {
     justify-content: center;
   }
 }
+/* touch screens: bigger tap area on the certificate progress dots (about 44px tall) */
+@media (hover: none) {
+  .dts button::after {
+    inset: -20px -2px;
+  }
+}
