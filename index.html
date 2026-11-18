@@ -1,561 +1,264 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Froilan Ocubillo | Backend and Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Computer Engineer building APIs and apps with Python, Go, Flutter, Firebase and Supabase."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Pixelify+Sans:wght@400;600&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Froilan Ocubillo</div>
-      <div class="nav-links-wrap">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+    <header>
+      <div class="w">
+        <a href="#hero" class="logo">Froilan Ocubillo</a>
+        <nav id="nav">
+          <a href="#about">About</a><a href="#stack">Tech Stack</a><a href="#projects">Projects</a
+          ><a href="#certs">Certificates</a><a href="#contact">Contact</a>
+        </nav>
+        <button class="ib" id="th" aria-label="Toggle dark mode">&#9790;</button
+        ><button class="ib" id="burger" aria-label="Open menu">&#9776;</button>
       </div>
-      <button
-        class="theme-toggle-btn"
-        id="theme-toggle-btn"
-        aria-label="Toggle dark mode"
-        onclick="toggleTheme()"
-      >
-        <i class="fa-solid fa-moon"></i>
-      </button>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Froilan Ocubillo</div>
-      <div class="hamburger-nav-right">
-        <button
-          class="theme-toggle-btn"
-          id="theme-toggle-btn-mobile"
-          aria-label="Toggle dark mode"
-          onclick="toggleTheme()"
-        >
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="w">
+          <div class="win">
+            <div class="wb"><i></i><i></i><i></i><span>hello.exe</span></div>
+            <div
+              class="sc"
+              id="sc"
+              tabindex="0"
+              role="img"
+              aria-label="Pixel art of Froilan coding at his desk. Hover to say hello."
+              style="aspect-ratio: 509/743"
+            >
+              <img class="f on" src="./images/first/P1.png" alt="" /><img
+                class="f"
+                src="./images/first/P2.png"
+                alt=""
+              /><img class="f" src="./images/first/P3.png" alt="" /><img
+                class="f"
+                src="./images/first/P4.png"
+                alt=""
+              /><img class="f" src="./images/first/P5.png" alt="" /><img
+                class="bb"
+                src="./images/first/pix-bubble.png"
+                alt=""
+              />
+            </div>
           </div>
-          <div class="menu-links">
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#certificates" onclick="toggleMenu()">Certificates</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <h1>
+            <em>Hello</em>, I am
+            <span class="nm"
+              >Froilan<svg viewBox="0 0 330 100" preserveAspectRatio="none" aria-hidden="true">
+                <path
+                  pathLength="1"
+                  d="M60 22C110 4 250 2 295 26C335 50 285 90 170 92C70 94 8 76 14 46C20 20 90 8 175 8C230 8 280 16 300 30"
+                /></svg></span
+            >!
+          </h1>
+          <p class="tag">
+            I deliver results. Even when I run into hardships and errors, I keep going until I get
+            it done precisely.
+          </p>
+          <div class="px" role="list">
+            <div role="listitem">
+              <b data-n="101" data-s="%">101%</b><span>effort I contribute</span>
+            </div>
+            <div role="listitem"><b data-n="9">9</b><span>projects created</span></div>
+            <div role="listitem">
+              <b data-n="400">400</b><span>OJT hours, perfect attendance</span>
+            </div>
           </div>
+          <div class="row">
+            <button class="btn p" id="rb">View resume</button
+            ><a class="btn" href="#projects">See my projects</a>
+          </div>
+          <div class="row so">
+            <a
+              href="https://www.linkedin.com/in/froilan-ocubillo-834609409/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              ><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+                <!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"
+                /></svg></a
+            ><a
+              href="https://github.com/ocubillofroilan-dev"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+              title="GitHub"
+              ><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                <!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"
+                /></svg></a
+            ><a href="mailto:ocubillofroilan@gmail.com" aria-label="Email" title="Email"
+              ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"
+                /></svg
+            ></a>
+          </div>
+          <p class="note">Open to junior backend and full-stack roles</p>
         </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="hero-photo-frame">
-        <div class="section__pic-container">
-          <img src="./images/froilan.png" alt="Froilan Ocubillo profile picture" />
-        </div>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1 hero-badge">Hello, I'm</p>
-        <h1 class="title" id="hero-name">Froilan Ocubillo</h1>
-        <p class="section__text__p2 hero-subtitle">Computer Engineering Graduate</p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="openResumeModal()">
-            View Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./images/email.png"
-            alt="My email"
-            class="icon"
-            onclick="location.href='#contact'"
-          />
-          <img
-            src="./images/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/froilan-ocubillo-834609409/'"
-          />
-          <img
-            src="./images/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/ocubillofroilan-dev'"
-          />
-        </div>
-      </div>
-    </section>
-    <div class="resume-modal" id="resume-modal">
-      <div class="resume-modal-content">
-        <span class="resume-modal-close" id="resume-modal-close">&times;</span>
-        <iframe
-          id="resume-modal-iframe"
-          src="./images/Froilan_Ocubillo_Updated_Resume.pdf"
-          title="Froilan Ocubillo Resume"
-        ></iframe>
-        <a
-          class="btn btn-color-1 resume-download-btn"
-          href="./images/Froilan_Ocubillo_Updated_Resume.pdf"
-          download
-        >
-          Download Resume
-        </a>
-      </div>
-    </div>
-    <section id="about">
-  <p class="section__text__p1">Get To Know More</p>
-  <h1 class="title">About Me</h1>
+        <i class="bl"></i><i class="bl b2"></i>
+        <div class="cue"></div>
+      </section>
 
-  <div class="about-two-column">
-    <div class="about-column">
-      <h2 class="about-subheading">Education</h2>
-      <div class="education-timeline">
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Elementary School</h3>
-            <div class="timeline-hover-detail">
-              <p>Dayap Elementary School - Annex | Calauan, Laguna</p>
-              <p>2008 - 2014</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Junior High School</h3>
-            <div class="timeline-hover-detail">
-              <p>Dayap National High School - Main | Calauan, Laguna</p>
-              <p>2014 - 2018</p>
-              <p>With Honors</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Senior High School</h3>
-            <div class="timeline-hover-detail">
-              <p>Luzonian Center of Excellence for Science and Technology | TVL - Industrial Arts | Calauan, Laguna</p>
-              <p>2018 - 2020</p>
-              <p>With Honors</p>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>College</h3>
-            <div class="timeline-hover-detail">
-              <p>Pamantasan ng Lungsod ng San Pablo | San Pablo, Laguna</p>
-              <p>Bachelor of Science in Computer Engineering</p>
-              <p>2020 - 2024</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="lg" aria-hidden="true"><div id="lg"></div></div>
 
-    <div class="about-column">
-      <h2 class="about-subheading">Experience</h2>
-      <div class="education-timeline">
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Healthcare Customer Service Representative</h3>
-            <div class="timeline-hover-detail">
-              <p>Nextvas | Los Baños, Laguna</p>
-              <p>November 2024 - February 2026</p>
-              <p>Top Performer and Top QA</p>
+      <section id="about">
+        <div class="w">
+          <p class="eb">Who I am</p>
+          <div class="ab">
+            <div class="ph">
+              <img
+                class="ph-real"
+                src="./images/graduate.png"
+                alt="Froilan Ocubillo in graduation attire"
+              /><img class="ph-px" src="./images/me.jpg" alt="Froilan Ocubillo" />
+            </div>
+            <div>
+              <p class="s">
+                Computer Engineer who is curious and innovative, improving and easing workflows.
+              </p>
+              <p>
+                At my previous job, I built a Python automation script and Excel formulas that
+                removed 2–3 pages of Google Forms from every ticket. Instead of retyping the same
+                information, I could copy, paste and submit, which made my work much easier. I
+                earned the Top Performer and Top QA Performer awards. I focused on upskilling and
+                building my knowledge of full-stack apps with FastAPI, Go, Flutter, Firebase and
+                Supabase, and I deploy them on Vercel and Render.
+              </p>
+              <p>
+                I have knowledge of REST APIs, authentication and security basics. While upskilling,
+                I also enrolled in TESDA to deepen my knowledge of computers and networks, which
+                helps me grow as a computer engineer.
+              </p>
             </div>
           </div>
+          <div class="tl" id="tl"></div>
         </div>
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Engineering Department Intern</h3>
-            <div class="timeline-hover-detail">
-              <p>Furukawa Automotive Systems LIMA Phils., Inc. | Lipa City, Batangas</p>
-              <p>June 2023 - September 2023</p>
-              <p>Completion and Perfect attendance</p>
-            </div>
-          </div>
+      </section>
+
+      <section id="stack">
+        <div class="w">
+          <p class="eb">What I use</p>
+          <h2>Tech stack</h2>
+          <p class="sub">Backend first, with the frontend and IT skills to ship the whole thing.</p>
+          <div class="sk" id="sk"></div>
         </div>
-        <div class="timeline-node">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h3>Store Staff &amp; Cashier</h3>
-            <div class="timeline-hover-detail">
-              <p>Telay Store 888 | Masapang, Victoria, Laguna</p>
-              <p>November 2021 - June 2023</p>
-            </div>
-          </div>
+      </section>
+      <section id="projects">
+        <div class="w">
+          <p class="eb">What I built</p>
+          <h2>Projects</h2>
+          <p class="sub">Apps, APIs and hardware I have built so far.</p>
+          <div class="pg" id="pg"></div>
+          <div class="more"><button class="btn" id="pm">Show more projects</button></div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="text-container">
-    <p>
-    A self-taught developer and aspiring software engineer, 
-    I'm continuously expanding my programming skills through independent projects. 
-    I'm currently deepening my knowledge of APIs and exploring cloud computing 
-    as the next steps in my development roadmap.
-    </p>
-  </div>
-</section>
-<section id="experience">
-  <p class="section__text__p1">Explore My</p>
-  <h1 class="title">Tech Stacks and Tools</h1>
-
-  <div class="marquee-container">
-    <div class="marquee-track">
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo" class="icon" /><span>HTML</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" class="icon" /><span>CSS</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="icon" /><span>JavaScript</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" class="icon" /><span>PostgreSQL</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="icon" /><span>MySQL</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" class="icon" /><span>Python</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" class="icon" /><span>Java</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ logo" class="icon" /><span>C++</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo" class="icon" /><span>HTML</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" class="icon" /><span>CSS</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="icon" /><span>JavaScript</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" class="icon" /><span>PostgreSQL</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="icon" /><span>MySQL</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" class="icon" /><span>Python</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo" class="icon" /><span>Java</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ logo" class="icon" /><span>C++</span></div>
-    </div>
-  </div>
-
-  <div class="marquee-container">
-    <div class="marquee-track marquee-reverse">
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" class="icon" /><span>Git</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Git Bash logo" class="icon" /><span>Git Bash</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" class="icon" /><span>GitHub</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" class="icon" /><span>Flask</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" class="icon" /><span>Django</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code logo" class="icon" /><span>VS Code</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" class="icon" /><span>Git</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Git Bash logo" class="icon" /><span>Git Bash</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" class="icon" /><span>GitHub</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" class="icon" /><span>Flask</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" class="icon" /><span>Django</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code logo" class="icon" /><span>VS Code</span></div>
-    </div>
-  </div>
-
-  <div class="marquee-container">
-    <div class="marquee-track">
-      <div class="marquee-item"><i class="fa-solid fa-compass-drafting marquee-icon"></i><span>AutoCAD</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino IDE logo" class="icon" /><span>Arduino IDE</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-network-wired marquee-icon"></i><span>Network Cabling</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-server marquee-icon"></i><span>TCP/IP</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-globe marquee-icon"></i><span>IPv4 &amp; IPv6</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-laptop-medical marquee-icon"></i><span>Computer Troubleshoot</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-compass-drafting marquee-icon"></i><span>AutoCAD</span></div>
-      <div class="marquee-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino IDE logo" class="icon" /><span>Arduino IDE</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-network-wired marquee-icon"></i><span>Network Cabling</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-server marquee-icon"></i><span>TCP/IP</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-globe marquee-icon"></i><span>IPv4 &amp; IPv6</span></div>
-      <div class="marquee-item"><i class="fa-solid fa-laptop-medical marquee-icon"></i><span>Computer Troubleshoot</span></div>
-    </div>
-  </div>
-</section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers" id="projects-grid">
-          <div class="details-container color-container project-card" data-name="Arduino-Based PET Bottle Filament Maker for 3D Printing" data-images='["./images/thesis.png", "./images/thesis1.png", "./images/thesis2.png", "./images/thesis3.png", "./images/thesis4.png", "./images/thesis5.png", "./images/1.png", "./images/2.png", "./images/3.png", "./images/4.png", "./images/5.png", "./images/6.png", "./images/7.png", "./images/8.png", "./images/9.png", "./images/10.png", "./images/11.png", "./images/12.png", "./images/13.png", "./images/14.png", "./images/15.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/thesis.png"
-                  alt="Project 1"
-                  class="project-img"
-                />
+      </section>
+      <section id="certs">
+        <div class="w">
+          <p class="eb">My proof</p>
+          <h2>Certificates</h2>
+          <div class="cs">
+            <div class="cl">
+              <div class="inf" id="inf" aria-live="polite">
+                <div class="cno"><span id="cn1">01</span><small id="cn2">/ 17</small></div>
+                <p class="ci" id="ci"></p>
+                <h3 id="ct"></h3>
               </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+              <div class="ctl"><button class="btn" id="fb">View full screen</button></div>
+              <div class="dts" id="dts"></div>
             </div>
-            <h2 class="experience-sub-title project-title">Arduino-Based PET Bottle Filament Maker for 3D Printing</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: Polyethylene Terephthalate (PET) Bottle Filament Maker is an Arduino-based system developed to convert discarded PET bottles into usable 3D printing filament. By automating the process of cutting, heating, and extruding recycled plastic, the project promotes sustainability by reducing plastic waste while providing an affordable, eco-friendly alternative to commercial filament for 3D printing applications.
-            </br> Tech Stack: Arduino & C++ (Arduino IDE)
-            </p>
-          </div>
-          <div class="details-container color-container project-card" data-name="AutoStature Device" data-images='["./images/autostature.png", "./images/autostature1.png", "./images/autostature1.png", "./images/autostature2.png", "./images/autostature3.png", "./images/autostature4.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/autostature.png"
-                  alt="Project 2"
-                  class="project-img"
-                />
-              </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            <div class="sw">
+              <div
+                class="stk"
+                id="stk"
+                tabindex="0"
+                role="group"
+                aria-label="Certificate card stack. Press Enter for the next certificate."
+              ></div>
             </div>
-            <h2 class="experience-sub-title project-title">AutoStature Device</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: Autostature is an Arduino-based height measuring device that lets users check their height without a measuring tape — simply stand under the device and your height is automatically detected and displayed on an LCD screen. Built using embedded C++, the system uses an ultrasonic sensor to measure distance and calculate height in real time.
-            </br> Tech Stack: Arduino & C++ (Arduino IDE)
-            </p>
-          </div>
-          <div class="details-container color-container project-card" data-name="Job Finder Application" data-images='["./images/jobfinder0.png", "./images/jobfinder1.png", "./images/jobfinder2.png", "./images/jobfinder3.png", "./images/jobfinder4.png", "./images/jobfinder5.png", "./images/jobfinder6.png", "./images/jobfinder7.png", "./images/jobfinder8.png", "./images/jobfinder9.png", "./images/jobfinder10.png", "./images/jobfinder11.png", "./images/jobfinder12.png", "./images/jobfinder13.png", "./images/jobfinder14.png", "./images/jobfinder15.png", "./images/jobfinder16.png", "./images/jobfinder17.png", "./images/jobfinder18.png", "./images/jobfinder19.png", "./images/jobfinder20.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/jobfinder0.png"
-                  alt="Project 3"
-                  class="project-img"
-                />
-              </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-            <h2 class="experience-sub-title project-title">Job Finder Application</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: Jobfinder is a web-based job listing platform built for both employees and employers. Employers can post job openings and manage hiring listings, while employees can search and browse available jobs and apply directly through the platform. Both user types can create and update their profiles to improve visibility and engagement on the platform. Built with a PHP backend and MySQL database, the system handles dynamic content rendering and data storage for job listings and user interactions.
-            </br> Tech Stack: PHP, MySQL, HTML, CSS, JavaScript
-            </p>
-          </div>
-          <div class="details-container color-container project-card" data-name="Customer Relationship Management System" data-images='["./images/crm1.png", "./images/crm2.png", "./images/crm3.png", "./images/crm4.png", "./images/crm5.png", "./images/crm6.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/crm1.png"
-                  alt="Project 4"
-                  class="project-img"
-                />
-              </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-            <h2 class="experience-sub-title project-title">Customer Relationship Management System</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: A web-based CRM system built with Django to help manage and organize customer information, interactions, and business relationships. The system supports full CRUD (Create, Read, Update, Delete) functionality, allowing users to add new customer records, view and search existing entries, update details, and remove records as needed. It features a responsive front end and a relational database backend for efficient data handling and retrieval.
-            </br> Tech Stack: Django, Python, HTML, CSS, JavaScript, MySQL
-            </p>
-          </div>
-          <div class="details-container color-container project-card" data-name="Authentication Notes" data-images='["./images/note1.png", "./images/note2.png", "./images/note3.png", "./images/note4.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/note1.png"
-                  alt="Project 5"
-                  class="project-img"
-                />
-              </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-            <h2 class="experience-sub-title project-title">Authentication Notes</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: A secure notes application featuring user authentication, allowing users to create, manage, and store personal notes safely. The system supports full CRUD (Create, Read, Update, Delete) operations, letting users add new notes, view their saved notes, edit content, and delete entries as needed. Built with Flask and SQLAlchemy, the system ensures user data and notes are protected through proper login and session management.
-            </br> Tech Stack: Flask, Python, HTML, CSS, JavaScript, SQLAlchemy
-            </p>
-          </div>
-          <div class="details-container color-container project-card" data-name="Website Portfolio" data-images='["./images/port1.png", "./images/port2.png", "./images/port3.png", "./images/port4.png", "./images/port5.png", "./images/port6.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/port1.png"
-                  alt="Project 6"
-                  class="project-img"
-                />
-              </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-            <h2 class="experience-sub-title project-title">Website Portfolio</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: A personal portfolio website built to highlight my educational background, work experience, projects, and certifications. It features organized sections — About, Experience, Projects, Certificates, and Contact — allowing visitors to easily navigate and learn about my background and achievements. The site was designed with a responsive layout for a seamless experience across different devices.
-            </br> Tech Stack: HTML, CSS, JavaScript
-            </p>
-          </div>
-          <div class="details-container color-container project-card project-hidden" data-name="Number Guessing Game" data-images='["./images/numberguess.png"]'>
-            <div class="project-image-wrap">
-              <div class="article-container">
-                <img
-                  src="./images/numberguess.png"
-                  alt="Project 7"
-                  class="project-img"
-                />
-              </div>
-              <button class="carousel-arrow carousel-arrow-left" aria-label="Previous image"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-              <button class="carousel-arrow carousel-arrow-right" aria-label="Next image"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
-            <h2 class="experience-sub-title project-title">Number Guessing Game</h2>
-            <button class="description-toggle-btn">Description &raquo;&raquo;&raquo;</button>
-            <p class="project-description">Description: A simple command-line game built in Python where the program generates a random number and the user attempts to guess it, receiving feedback until the correct number is found. Developed as a beginner-friendly project to practice core Python logic.
-            </br> Tech Stack: Python
-            </p>
-          </div>
-
-        </div>
-      </div>
-      <div class="show-more-container" id="projects-show-more-container">
-        <button class="btn btn-color-2" id="show-more-projects-btn">Show More</button>
-      </div>
-    </section>
-    <div class="project-modal" id="project-modal">
-      <span class="project-modal-close" id="project-modal-close">&times;</span>
-      <img class="project-modal-img" id="project-modal-img" src="" alt="" />
-      <p class="project-modal-title" id="project-modal-title"></p>
-    </div>
-    <section id="certificates">
-      <p class="section__text__p1">My</p>
-      <h1 class="title">Certificates</h1>
-      <div class="experience-details-container">
-        <div class="about-containers" id="certificates-grid">
-          <div class="details-container color-container certificate-card" data-name="Certificate Name 1">
-            <div class="article-container">
-              <img
-                src="./images/responsive_design.png"
-                alt="Certificate 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Responsive Web Design - freeCodeCamp</h2>
-          </div>
-          <div class="details-container color-container certificate-card" data-name="Certificate Name 2">
-            <div class="article-container">
-              <img
-                src="./images/python.png"
-                alt="Certificate 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Python - freeCodeCamp</h2>
-          </div>
-          <div class="details-container color-container certificate-card" data-name="Certificate Name 3">
-            <div class="article-container">
-              <img
-                src="./images/relational_database.png"
-                alt="Certificate 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Relational Databases - freeCodeCamp</h2>
-          </div>
-          <div class="details-container color-container certificate-card" data-name="Certificate Name 4">
-            <div class="article-container">
-              <img
-                src="./images/network_basics.png"
-                alt="Certificate 4"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Networking Basics - Cisco Networking Academy</h2>
-          </div>
-          <div class="details-container color-container certificate-card" data-name="Certificate Name 5">
-            <div class="article-container">
-              <img
-                src="./images/python_essential.png"
-                alt="Certificate 5"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Python Essentials 1 - Cisco Networking Academy</h2>
-          </div>
-          <div class="details-container color-container certificate-card" data-name="Certificate Name 6">
-            <div class="article-container">
-              <img
-                src="./images/intro_css.png"
-                alt="Certificate 6"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Introduction to Computer Systems Servicing - TESDA</h2>
-          </div>
-
-          <div class="details-container color-container certificate-card certificate-hidden" data-name="Certificate Name 7">
-            <div class="article-container">
-              <img
-                src="./images/install_config.png"
-                alt="Certificate 7"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Installing and Configuring Computer Systems - TESDA</h2>
-          </div>
-          <div class="details-container color-container certificate-card certificate-hidden" data-name="Certificate Name 8">
-            <div class="article-container">
-              <img
-                src="./images/setting_network.png"
-                alt="Certificate 8"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Setting Up Computer Networks - TESDA</h2>
-          </div>
-          <div class="details-container color-container certificate-card certificate-hidden" data-name="Certificate Name 9">
-            <div class="article-container">
-              <img
-                src="./images/setting_server.png"
-                alt="Certificate 9"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Setting Up Computer Servers - TESDA</h2>
-          </div>
-          <div class="details-container color-container certificate-card certificate-hidden" data-name="Certificate Name 10">
-            <div class="article-container">
-              <img
-                src="./images/maintain_system_network.png"
-                alt="Certificate 10"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Maintaining Computer Systems and Networks - TESDA</h2>
           </div>
         </div>
+      </section>
+      <section id="contact">
+        <div class="w">
+          <p class="eb">Hire me</p>
+          <h2>Ready for my <em>first day</em></h2>
+          <p class="sub">
+            I’m looking for my first role as a developer. Please send me a message and give me a
+            shot to show my dedication. I’ll bring my 101%.
+          </p>
+          <a class="em" href="mailto:ocubillofroilan@gmail.com">ocubillofroilan@gmail.com</a>
+          <div class="row" style="margin-top: 32px">
+            <a class="btn p" href="mailto:ocubillofroilan@gmail.com">Email me</a>
+          </div>
+          <div class="row so" style="margin-top: 22px">
+            <a
+              href="https://www.linkedin.com/in/froilan-ocubillo-834609409/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              ><svg viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+                <!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"
+                /></svg></a
+            ><a
+              href="https://github.com/ocubillofroilan-dev"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+              title="GitHub"
+              ><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                <!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>© Froilan Ocubillo ✌️</footer>
+
+    <dialog id="rm">
+      <iframe src="./images/Froilan_Ocubillo_Updated_Resume.pdf" title="Resume"></iframe>
+      <div class="row">
+        <a class="btn p" href="./images/Froilan_Ocubillo_Updated_Resume.pdf" download
+          >Download resume</a
+        ><button class="btn" data-x>Close</button>
       </div>
-      <div class="show-more-container">
-        <button class="btn btn-color-2" id="show-more-btn">Show More</button>
-      </div>
-    </section>
-      <div class="cert-modal" id="cert-modal">
-        <span class="cert-modal-close" id="cert-modal-close">&times;</span>
-        <img class="cert-modal-img" id="cert-modal-img" src="" alt="" />
-        <p class="cert-modal-title" id="cert-modal-title"></p>
-      </div>
-    <section id="contact">
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-pill">
-        <a href="mailto:ocubillofroilan@gmail.com" class="contact-pill-item">
-          <img src="./images/email.png" alt="Email icon" class="icon contact-icon" />
-          <span>ocubillofroilan@gmail.com</span>
-        </a>
-        <span class="contact-pill-divider"></span>
-        <a href="https://www.linkedin.com/in/froilan-ocubillo-834609409/" class="contact-pill-item">
-          <img src="./images/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-          <span>LinkedIn</span>
-        </a>
-        <span class="contact-pill-divider"></span>
-        <a href="https://github.com/ocubillofroilan-dev" class="contact-pill-item">
-          <img src="./images/github.png" alt="GitHub icon" class="icon contact-icon" />
-          <span>GitHub</span>
-        </a>
-      </div>
-    </section>
-    <footer>
-      <p>Copyright &#169; 2026 Froilan Ocubillo. All Rights Reserved.</p>
-    </footer>
+    </dialog>
+    <dialog id="lb">
+      <img id="li" alt="" />
+      <div class="row"><b id="lt"></b><button class="btn" data-x>Close</button></div>
+    </dialog>
+    <dialog id="fs" aria-label="Certificate full screen">
+      <div class="fsb"><b id="ft"></b><button class="btn" data-x>Close</button></div>
+      <img id="fi" alt="" /><button class="ar al" id="fp" aria-label="Previous certificate">
+        &#8249;</button
+      ><button class="ar arr" id="fn" aria-label="Next certificate">&#8250;</button>
+    </dialog>
+
     <script src="script.js"></script>
   </body>
 </html>
