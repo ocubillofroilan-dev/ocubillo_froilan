@@ -291,12 +291,14 @@ $("#lg").innerHTML = [0, 1]
   .join("");
 
 /* ---------- Projects ---------- */
+/* u = live demo link (opens in a new tab). Leave u empty to show the screenshots in a pop-up instead. */
 const P = [
   {
     t: "Student Management System",
     k: "Independent project",
     d: "REST API for students, courses, grades, attendance and schedules, with secure login and role-based access. Deployed on Render and Vercel.",
     s: "FastAPI, Python, Supabase, Tailwind CSS",
+    u: "",
     im: [],
   },
   {
@@ -304,6 +306,7 @@ const P = [
     k: "Independent project",
     d: "Laundry shop app with public, customer and owner views. Go backend with Firebase login and data.",
     s: "Flutter, Dart, Go, Firebase",
+    u: "",
     im: [],
   },
   {
@@ -311,6 +314,7 @@ const P = [
     k: "Independent project",
     d: "Emergency and disaster preparedness app for a barangay, with public information and an admin-only panel.",
     s: "Flutter, Dart, Go, Firebase",
+    u: "",
     im: [],
   },
   {
@@ -318,6 +322,7 @@ const P = [
     k: "Thesis",
     d: "Arduino system that cleans, cuts, heats and extrudes PET bottles into 3D printing filament. I led the team and built the C++ logic, AutoCAD parts and wiring.",
     s: "Arduino, C++, AutoCAD",
+    u: "",
     im: ["./images/thesis.png", ...seq("thesis", 1, 5), ...seq("", 1, 15)],
   },
   {
@@ -325,6 +330,7 @@ const P = [
     k: "Academic project",
     d: "Job search and posting platform for employees and employers in San Pablo, Laguna. I led the group and contributed to the MySQL database.",
     s: "PHP, MySQL, HTML, CSS",
+    u: "",
     im: seq("jobfinder", 0, 20),
   },
   {
@@ -332,6 +338,7 @@ const P = [
     k: "Academic project",
     d: "Arduino height-measuring device. An ultrasonic sensor calculates height in real time and shows it on an LCD.",
     s: "Arduino, C++",
+    u: "",
     im: ["./images/autostature.png", ...seq("autostature", 1, 4)],
     h: 1,
   },
@@ -340,6 +347,7 @@ const P = [
     k: "Independent project",
     d: "CRM web app with authentication and full create, read, update and delete for customer records.",
     s: "Django, Python, MySQL",
+    u: "",
     im: seq("crm", 1, 6),
     h: 1,
   },
@@ -348,6 +356,7 @@ const P = [
     k: "Independent project",
     d: "Secure notes app with login and session management. Each user only sees their own notes.",
     s: "Flask, Python, SQLAlchemy",
+    u: "",
     im: seq("note", 1, 4),
     h: 1,
   },
@@ -356,20 +365,39 @@ const P = [
     k: "Independent project",
     d: "This responsive portfolio, built with HTML, CSS and JavaScript.",
     s: "HTML, CSS, JavaScript",
+    u: "",
     im: seq("port", 1, 6),
     h: 1,
+  },
+  {
+    t: "Happy Birthday",
+    k: "Independent project",
+    d: "Birthday surprise website built around a 3D model. I made the 3D design in Tinkercad and displayed it as a GLB model using HTML, CSS and JavaScript.",
+    s: "HTML, CSS, JavaScript, GLB 3D model, Tinkercad",
+    u: "",
+    im: [],
   },
 ];
 P.sort((a, b) => !!b.im.length - !!a.im.length);
 const PH = (p) =>
   `<div class="ph2"><span>${p.t[0]}</span><small>Screenshots coming soon</small></div>`;
+/* Demo button: live link opens a new tab, otherwise screenshots pop up, otherwise disabled */
+const demoBtn = (p) =>
+  p.u
+    ? `<a class="btn p" href="${p.u}" target="_blank" rel="noopener" aria-label="Demo of ${p.t}, opens the live site in a new tab">Demo</a>`
+    : p.im.length
+      ? `<button class="btn p" data-m aria-label="Demo of ${p.t}, view screenshots">Demo</button>`
+      : `<button class="btn" disabled title="Coming soon">Demo soon</button>`;
 $("#pg").innerHTML = P.map(
   (p, i) =>
-    `<article class="pc${i > 3 ? " hid" : ""}" data-i="${i}"><div class="pm">${p.im.length ? `<img src="${p.im[0]}" alt="${p.t}" loading="lazy">` : PH(p)}${p.im.length > 1 ? `<button class="ar al" aria-label="Previous image">&#8249;</button><button class="ar arr" aria-label="Next image">&#8250;</button><span class="cn">1/${p.im.length}</span>` : ""}</div><small>${p.k}</small><h3>${p.t}</h3><p>${p.d}</p><p class="tg">${p.s}</p></article>`,
+    `<article class="pc${i > 3 ? " hid" : ""}" data-i="${i}"><div class="pm">${p.im.length ? `<img src="${p.im[0]}" alt="${p.t}" loading="lazy">` : PH(p)}${p.im.length > 1 ? `<button class="ar al" aria-label="Previous image">&#8249;</button><button class="ar arr" aria-label="Next image">&#8250;</button><span class="cn">1/${p.im.length}</span>` : ""}</div><small>${p.k}</small><h3>${p.t}</h3><p class="tg">${p.s}</p><div class="pb"><button class="btn" data-d>Description</button>${demoBtn(p)}</div></article>`,
 ).join("");
 $$("#pg .pc").forEach((c) => {
   const p = P[c.dataset.i],
     img = c.querySelector("img");
+  c.querySelector("[data-d]").onclick = () => describe(p);
+  const dm = c.querySelector("[data-m]");
+  if (dm) dm.onclick = () => gallery(p, 0);
   if (!img) return;
   let n = 0;
   const cn = c.querySelector(".cn");
@@ -378,11 +406,14 @@ $$("#pg .pc").forEach((c) => {
     img.src = p.im[n];
     cn.textContent = `${n + 1}/${p.im.length}`;
   };
-  img.onclick = () => show(img.src, p.t);
+  img.onclick = () => gallery(p, n);
   let fails = 0;
   const dead = () => {
     img.outerHTML = PH(p);
     c.querySelectorAll(".ar,.cn").forEach((e) => e.remove());
+    p.bad = true;
+    const m = c.querySelector("[data-m]");
+    if (m) m.outerHTML = '<button class="btn" disabled title="Coming soon">Demo soon</button>';
   };
   img.onload = () => {
     fails = 0;
@@ -414,7 +445,7 @@ const C = [
   ["Top Performer and Top QA Performer, October and November", "Nextvas"],
   ["On-the-Job Training: 400 hours completed", "Furukawa Automotive Systems"],
   ["Perfect Attendance, On-the-Job Training", "Furukawa Automotive Systems"],
-  ["TESDA NC II, Computer Systems Servicing", "TESDA"],
+  ["TESDA National Certificate - Computer System Servicing", "TESDA"],
   ["Go (Golang)", "Coddy Tech", "Go.png"],
   ["Dart", "Coddy Tech", "Dart.png"],
   ["JavaScript", "freeCodeCamp", "fcc-javascript.png"],
@@ -435,11 +466,6 @@ const C = [
     "Cisco Networking Academy",
     ["cisco-python-essentials.png", "cisco-python-essentials-1.png", "cisco-python-essential.png"],
   ],
-  ["Introduction to Computer Systems Servicing", "TESDA"],
-  ["Installing and Configuring Computer Systems", "TESDA"],
-  ["Setting Up Computer Networks", "TESDA"],
-  ["Setting Up Computer Servers", "TESDA"],
-  ["Maintaining Computer Systems and Networks", "TESDA"],
 ];
 
 /* ---------- Projects: show more / less ---------- */
@@ -623,15 +649,53 @@ fs.addEventListener("close", () => {
   ai.onerror = f;
   if (ai.complete && ai.naturalWidth === 0) f();
 })();
-const rm = $("#rm"),
-  lb = $("#lb");
+const rm = $("#rm");
 $("#rb").onclick = () => rm.showModal();
-function show(s, t) {
-  $("#li").src = s;
-  $("#li").alt = t;
-  $("#lt").textContent = t;
-  lb.showModal();
+/* ---------- Projects: description pop-up and screenshot viewer ---------- */
+const pd = $("#pd"),
+  gl = $("#gl");
+let gprj = null,
+  gn = 0;
+function describe(p) {
+  $("#pdk").textContent = p.k;
+  $("#pdt").textContent = p.t;
+  $("#pdd").textContent = p.d;
+  $("#pds").textContent = p.s;
+  pd.showModal();
 }
+function gset(k) {
+  gn = (k + gprj.im.length) % gprj.im.length;
+  $("#gi").src = gprj.im[gn];
+  $("#gi").alt = `${gprj.t} screenshot ${gn + 1}`;
+  $("#gt").textContent = `${gprj.t} · ${gn + 1}/${gprj.im.length}`;
+}
+function gallery(p, k) {
+  if (!p.im.length || p.bad) return;
+  gprj = p;
+  $("#gprev").hidden = $("#gnext").hidden = p.im.length < 2;
+  gset(k || 0);
+  gl.showModal();
+}
+$("#gprev").onclick = () => gset(gn - 1);
+$("#gnext").onclick = () => gset(gn + 1);
+gl.addEventListener("keydown", (e) => {
+  if (!gprj || gprj.im.length < 2) return;
+  if (e.key === "ArrowRight") gset(gn + 1);
+  if (e.key === "ArrowLeft") gset(gn - 1);
+});
+(() => {
+  let x0 = 0;
+  const m = $("#glm");
+  m.addEventListener("touchstart", (e) => (x0 = e.touches[0].clientX), { passive: true });
+  m.addEventListener(
+    "touchend",
+    (e) => {
+      const d = e.changedTouches[0].clientX - x0;
+      if (gprj && gprj.im.length > 1 && Math.abs(d) > 50) gset(gn + (d < 0 ? 1 : -1));
+    },
+    { passive: true },
+  );
+})();
 $$("dialog").forEach((d) =>
   d.addEventListener("click", (e) => {
     if (e.target === d || e.target.dataset.x !== undefined) d.close();

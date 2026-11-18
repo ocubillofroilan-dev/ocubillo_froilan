@@ -1928,3 +1928,81 @@ dialog {
   top: -4%;
   width: 50%;
 }
+/* hero window v4: smaller window and character */
+#hero .w > .win {
+  width: 100%;
+  max-width: 330px;
+  justify-self: center;
+}
+.win .sc {
+  width: min(82%, 270px);
+}
+.wb span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* about photo: light mode shows the graduation photo, dark mode shows the pixel photo */
+.ph img.ph-px {
+  display: none;
+}
+[data-t="dark"] .ph img.ph-px {
+  display: block;
+}
+/* project buttons, description pop-up, screenshot viewer */
+.pb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.pb .btn {
+  width: auto;
+  flex: 1 1 0;
+  min-width: 120px;
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: none;
+  color: var(--ink);
+  box-shadow: none;
+  transform: none;
+}
+#pd {
+  max-width: min(560px, 94vw);
+}
+#pd small {
+  display: block;
+  color: var(--sage);
+  font-weight: 700;
+}
+#pd h3 {
+  font-size: 1.6rem;
+  margin: 6px 0 12px;
+}
+#pd p {
+  color: var(--mu);
+  font-size: 0.97rem;
+  margin-bottom: 10px;
+}
+#pd .tg {
+  color: var(--ink);
+  font-size: 0.88rem;
+}
+#pd .row {
+  justify-content: flex-end;
+}
+.glm {
+  position: relative;
+  background: var(--tint);
+}
+#gi {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
