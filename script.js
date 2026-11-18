@@ -79,6 +79,8 @@ const $ = (s) => document.querySelector(s),
   $$ = (s) => document.querySelectorAll(s),
   root = document.documentElement;
 const seq = (n, a, b) => Array.from({ length: b - a + 1 }, (_, i) => `./images/${n}${a + i}.png`);
+/* screenshots kept in a project folder: ./images/<folder>/<folder><number>.png */
+const shots = (f, a, b) => Array.from({ length: b - a + 1 }, (_, i) => `./images/${f}/${f}${a + i}.png`);
 
 /* ---------- Work experience, education and TESDA training ---------- */
 const EXP = [
@@ -296,20 +298,12 @@ $("#lg").innerHTML = [0, 1]
 /* u = live demo link (opens in a new tab). Leave u empty to show the screenshots in a pop-up instead. */
 const P = [
   {
-    t: "Student Management System",
-    k: "Independent project",
-    d: "REST API for students, courses, grades, attendance and schedules, with secure login and role-based access. Deployed on Render and Vercel.",
-    s: "FastAPI, Python, Supabase, Tailwind CSS",
+    t: "PET Bottle Filament Maker",
+    k: "Thesis",
+    d: "Arduino system that cleans, cuts, heats and extrudes PET bottles into 3D printing filament. I led the team and built the C++ logic, AutoCAD parts and wiring.",
+    s: "Arduino, C++, AutoCAD",
     u: "",
-    im: [],
-  },
-  {
-    t: "Empty Laundry Management System",
-    k: "Independent project",
-    d: "Laundry shop app with public, customer and owner views. Go backend with Firebase login and data.",
-    s: "Flutter, Dart, Go, Firebase",
-    u: "",
-    im: [],
+    im: ["./images/thesis/thesis.png", ...shots("thesis", 1, 6)],
   },
   {
     t: "Handa Barangay System",
@@ -320,12 +314,12 @@ const P = [
     im: [],
   },
   {
-    t: "PET Bottle Filament Maker",
-    k: "Thesis",
-    d: "Arduino system that cleans, cuts, heats and extrudes PET bottles into 3D printing filament. I led the team and built the C++ logic, AutoCAD parts and wiring.",
-    s: "Arduino, C++, AutoCAD",
+    t: "Student Management System",
+    k: "Independent project",
+    d: "REST API for students, courses, grades, attendance and schedules, with secure login and role-based access. Deployed on Render and Vercel.",
+    s: "FastAPI, Python, Supabase, Tailwind CSS",
     u: "",
-    im: ["./images/thesis.png", ...seq("thesis", 1, 5), ...seq("", 1, 15)],
+    im: [],
   },
   {
     t: "Job Finder Application",
@@ -333,7 +327,15 @@ const P = [
     d: "Job search and posting platform for employees and employers in San Pablo, Laguna. I led the group and contributed to the MySQL database.",
     s: "PHP, MySQL, HTML, CSS",
     u: "",
-    im: seq("jobfinder", 0, 20),
+    im: shots("jobfinder", 0, 20),
+  },
+  {
+    t: "Empty Laundry Management System",
+    k: "Independent project",
+    d: "Laundry shop app with public, customer and owner views. Go backend with Firebase login and data.",
+    s: "Flutter, Dart, Go, Firebase",
+    u: "",
+    im: [],
   },
   {
     t: "AutoStature Device",
@@ -341,8 +343,16 @@ const P = [
     d: "Arduino height-measuring device. An ultrasonic sensor calculates height in real time and shows it on an LCD.",
     s: "Arduino, C++",
     u: "",
-    im: ["./images/autostature.png", ...seq("autostature", 1, 4)],
+    im: ["./images/autostature/autostature.png", ...shots("autostature", 1, 4)],
     h: 1,
+  },
+  {
+    t: "Happy Birthday",
+    k: "Independent project",
+    d: "Birthday surprise website built around a 3D model. I made the 3D design in Tinkercad and displayed it as a GLB model using HTML, CSS and JavaScript.",
+    s: "HTML, CSS, JavaScript, GLB 3D model, Tinkercad",
+    u: "",
+    im: [],
   },
   {
     t: "Customer Relationship Management System",
@@ -371,16 +381,8 @@ const P = [
     im: seq("port", 1, 6),
     h: 1,
   },
-  {
-    t: "Happy Birthday",
-    k: "Independent project",
-    d: "Birthday surprise website built around a 3D model. I made the 3D design in Tinkercad and displayed it as a GLB model using HTML, CSS and JavaScript.",
-    s: "HTML, CSS, JavaScript, GLB 3D model, Tinkercad",
-    u: "",
-    im: [],
-  },
 ];
-P.sort((a, b) => !!b.im.length - !!a.im.length);
+/* projects appear in the order they are listed above */
 const PH = (p) =>
   `<div class="ph2"><span>${p.t[0]}</span><small>Screenshots coming soon</small></div>`;
 /* Demo button: live link opens a new tab, otherwise screenshots pop up, otherwise disabled */
