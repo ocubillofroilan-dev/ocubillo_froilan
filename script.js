@@ -310,7 +310,7 @@ const P = [
     k: "Independent project",
     d: "Emergency and disaster preparedness app for a barangay, with public information and an admin-only panel.",
     s: "Flutter, Dart, Go, Firebase",
-    u: "",
+    u: "https://handa-barangay.vercel.app/",
     im: [],
   },
   {
@@ -318,7 +318,7 @@ const P = [
     k: "Independent project",
     d: "REST API for students, courses, grades, attendance and schedules, with secure login and role-based access. Deployed on Render and Vercel.",
     s: "FastAPI, Python, Supabase, Tailwind CSS",
-    u: "",
+    u: "https://student-system-management-frontend.vercel.app/",
     im: [],
   },
   {
@@ -330,11 +330,11 @@ const P = [
     im: shots("jobfinder", 0, 20),
   },
   {
-    t: "Empty Laundry Management System",
+    t: "Neatify Laundry",
     k: "Independent project",
     d: "Laundry shop app with public, customer and owner views. Go backend with Firebase login and data.",
     s: "Flutter, Dart, Go, Firebase",
-    u: "",
+    u: "https://empty-laundry-app.vercel.app/",
     im: [],
   },
   {
@@ -351,7 +351,7 @@ const P = [
     k: "Independent project",
     d: "Birthday surprise website built around a 3D model. I made the 3D design in Tinkercad and displayed it as a GLB model using HTML, CSS and JavaScript.",
     s: "HTML, CSS, JavaScript, GLB 3D model, Tinkercad",
-    u: "",
+    u: "https://happybirthdaycess-coral.vercel.app/",
     im: [],
   },
   {
@@ -384,7 +384,7 @@ const P = [
 ];
 /* projects appear in the order they are listed above */
 const PH = (p) =>
-  `<div class="ph2"><span>${p.t[0]}</span><small>Screenshots coming soon</small></div>`;
+  `<div class="ph2"><span>${p.t[0]}</span><small>${p.u ? "Live demo available" : "Screenshots coming soon"}</small></div>`;
 /* Demo button: live link opens a new tab, otherwise screenshots pop up, otherwise disabled */
 const demoBtn = (p) =>
   p.u
