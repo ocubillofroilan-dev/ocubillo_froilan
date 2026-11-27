@@ -311,7 +311,7 @@ const P = [
     d: "A disaster preparedness and emergency information system designed to help barangay residents access important safety guides, emergency hotlines, evacuation centers, and public announcements. Developed with a public-facing interface and a secure admin panel for managing information, alerts, and emergency resources.",
     s: "Flutter, Dart, Go, Firebase",
     u: "https://handa-barangay.vercel.app/",
-    im: ["./images/handa_img.png"],
+    im: ["./image/handa_img.png"],
   },
   {
     t: "Student Management System",
@@ -319,7 +319,7 @@ const P = [
     d: "A web-based student management platform designed to organize and manage student records, courses, grades, attendance, and class schedules. Features a RESTful API, secure authentication, and role-based access control to manage different user permissions. Deployed using Render and Vercel.",
     s: "FastAPI, Python, Supabase, Tailwind CSS, HTML, JavaScript",
     u: "https://student-system-management-frontend.vercel.app/",
-    im: [],
+    im: ["./image/student-system.png"],
   },
   {
     t: "Job Finder Application",
@@ -335,7 +335,7 @@ const P = [
     d: "A laundry shop management application with separate interfaces for public customers and shop owners. Features include Firebase authentication, laundry service management, and real-time order status tracking, allowing customers to monitor the progress of their laundry from submission to completion. Built with a Go backend and Firebase integration.",
     s: "Flutter, Dart, Go, Firebase",
     u: "https://empty-laundry-app.vercel.app/",
-    im: ["./images/Neatify.png"],
+    im: ["./image/Neatify.png"],
   },
   {
     t: "AutoStature Device",
@@ -352,7 +352,7 @@ const P = [
     d: "An interactive birthday surprise website featuring a custom-designed 3D environment inspired by Drum Island from the anime One Piece. I created the 3D model using Tinkercad and integrated it into the website as a GLB model using HTML, CSS, and JavaScript, bringing the island-inspired birthday experience to life through a web-based 3D scene.",
     s: "HTML, CSS, JavaScript, GLB 3D model, Tinkercad",
     u: "https://happybirthdaycess-coral.vercel.app/",
-    im: ["./images/happy.png"],
+    im: ["./image/happy.png"],
   },
   {
     t: "Customer Relationship Management System",
@@ -360,7 +360,7 @@ const P = [
     d: "A web-based CRM platform designed to manage client information, verification records, and customer support requests. Features secure authentication, complete CRUD operations for client management, and a ticketing system that allows clients to submit concerns and staff members to manage and respond to support requests. Built to streamline client record management and customer service operations.",
     s: "Django, Python, MySQL, HTML, CSS, JavaScript",
     u: "https://clientdesk-y0ws.onrender.com",
-    im: ["./images/CRM.png"],
+    im: ["./image/CRM.png"],
     h: 1,
   },
   {
@@ -392,6 +392,13 @@ const demoBtn = (p) =>
     : p.im.length
       ? `<button class="btn p" data-m aria-label="Demo of ${p.t}, view screenshots">Demo</button>`
       : `<button class="btn" disabled title="Coming soon">Demo soon</button>`;
+/* banners live in the "image" folder; if the files are in "images" instead, fall back to that folder automatically */
+const altSrc = (el) => {
+  if (el.dataset.alt || !el.src.includes("/image/")) return false;
+  el.dataset.alt = "1";
+  el.src = el.src.replace("/image/", "/images/");
+  return true;
+};
 $("#pg").innerHTML = P.map(
   (p, i) =>
     `<article class="pc${i > 3 ? " hid" : ""}" data-i="${i}"><div class="pm">${p.im.length ? `<img src="${p.im[0]}" alt="${p.t}" loading="lazy">` : PH(p)}${p.im.length > 1 ? `<button class="ar al" aria-label="Previous image">&#8249;</button><button class="ar arr" aria-label="Next image">&#8250;</button><span class="cn">1/${p.im.length}</span>` : ""}</div><small>${p.k}${p.u ? '<span class="lv">Live demo</span>' : ""}</small><h3>${p.t}</h3><p class="tg">${p.s}</p><div class="pb"><button class="btn" data-d>Description</button>${demoBtn(p)}</div></article>`,
@@ -407,6 +414,7 @@ $$("#pg .pc").forEach((c) => {
   const cn = c.querySelector(".cn");
   const go = (k) => {
     n = (k + p.im.length) % p.im.length;
+    img.dataset.alt = "";
     img.src = p.im[n];
     cn.textContent = `${n + 1}/${p.im.length}`;
   };
@@ -429,6 +437,7 @@ $$("#pg .pc").forEach((c) => {
     fails = 0;
   };
   img.onerror = () => {
+    if (altSrc(img)) return;
     fails++;
     if (fails >= Math.min(p.im.length, 3)) dead();
     else go(n + 1);
@@ -666,6 +675,7 @@ function describe(p) {
 }
 function gset(k) {
   gn = (k + gprj.im.length) % gprj.im.length;
+  $("#gi").dataset.alt = "";
   $("#gi").src = gprj.im[gn];
   $("#gi").alt = `${gprj.t} screenshot ${gn + 1}`;
   $("#gt").textContent = `${gprj.t} · ${gn + 1}/${gprj.im.length}`;
@@ -679,6 +689,7 @@ function gallery(p, k) {
 }
 $("#gprev").onclick = () => gset(gn - 1);
 $("#gnext").onclick = () => gset(gn + 1);
+$("#gi").onerror = () => altSrc($("#gi"));
 gl.addEventListener("keydown", (e) => {
   if (!gprj || gprj.im.length < 2) return;
   if (e.key === "ArrowRight") gset(gn + 1);
