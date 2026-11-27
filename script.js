@@ -300,7 +300,7 @@ const P = [
   {
     t: "PET Bottle Filament Maker",
     k: "Thesis",
-    d: "Arduino system that cleans, cuts, heats and extrudes PET bottles into 3D printing filament. I led the team and built the C++ logic, AutoCAD parts and wiring.",
+    d: "An Arduino-based system designed to transform recycled PET bottles into 3D printing filament through cleaning, cutting, heating, and extrusion processes. I led the team and developed the system’s C++ logic, designed mechanical components using AutoCAD, and worked on the electrical wiring and system integration.",
     s: "Arduino, C++, AutoCAD",
     u: "",
     im: ["./images/thesis/thesis.png", ...shots("thesis", 1, 6)],
@@ -308,40 +308,40 @@ const P = [
   {
     t: "Handa Barangay System",
     k: "Independent project",
-    d: "Emergency and disaster preparedness app for a barangay, with public information and an admin-only panel.",
+    d: "A disaster preparedness and emergency information system designed to help barangay residents access important safety guides, emergency hotlines, evacuation centers, and public announcements. Developed with a public-facing interface and a secure admin panel for managing information, alerts, and emergency resources.",
     s: "Flutter, Dart, Go, Firebase",
     u: "https://handa-barangay.vercel.app/",
-    im: [],
+    im: ["./images/handa_img.png"],
   },
   {
     t: "Student Management System",
     k: "Independent project",
-    d: "REST API for students, courses, grades, attendance and schedules, with secure login and role-based access. Deployed on Render and Vercel.",
-    s: "FastAPI, Python, Supabase, Tailwind CSS",
+    d: "A web-based student management platform designed to organize and manage student records, courses, grades, attendance, and class schedules. Features a RESTful API, secure authentication, and role-based access control to manage different user permissions. Deployed using Render and Vercel.",
+    s: "FastAPI, Python, Supabase, Tailwind CSS, HTML, JavaScript",
     u: "https://student-system-management-frontend.vercel.app/",
     im: [],
   },
   {
     t: "Job Finder Application",
     k: "Academic project",
-    d: "Job search and posting platform for employees and employers in San Pablo, Laguna. I led the group and contributed to the MySQL database.",
-    s: "PHP, MySQL, HTML, CSS",
+    d: "A web-based job search and recruitment platform designed to connect job seekers with employers in San Pablo, Laguna. The system allows employers to post job opportunities and applicants to explore available positions. I led the team and contributed to the MySQL database design and management.",
+    s: "PHP, MySQL, HTML, CSS, JavaScript, XAMPP",
     u: "",
     im: shots("jobfinder", 0, 20),
   },
   {
     t: "Neatify Laundry",
     k: "Independent project",
-    d: "Laundry shop app with public, customer and owner views. Go backend with Firebase login and data.",
+    d: "A laundry shop management application with separate interfaces for public customers and shop owners. Features include Firebase authentication, laundry service management, and real-time order status tracking, allowing customers to monitor the progress of their laundry from submission to completion. Built with a Go backend and Firebase integration.",
     s: "Flutter, Dart, Go, Firebase",
     u: "https://empty-laundry-app.vercel.app/",
-    im: [],
+    im: ["./images/Neatify.png"],
   },
   {
     t: "AutoStature Device",
     k: "Academic project",
-    d: "Arduino height-measuring device. An ultrasonic sensor calculates height in real time and shows it on an LCD.",
-    s: "Arduino, C++",
+    d: "An Arduino-based height measurement device that uses an ultrasonic sensor to calculate a person’s height in real time and display the measurement on an LCD screen. Designed to provide a simple and automated approach to height measurement through sensor integration and hardware programming.",
+    s: "Arduino, C++, AutoCAD",
     u: "",
     im: ["./images/autostature/autostature.png", ...shots("autostature", 1, 4)],
     h: 1,
@@ -349,35 +349,35 @@ const P = [
   {
     t: "Happy Birthday",
     k: "Independent project",
-    d: "Birthday surprise website built around a 3D model. I made the 3D design in Tinkercad and displayed it as a GLB model using HTML, CSS and JavaScript.",
+    d: "An interactive birthday surprise website featuring a custom-designed 3D environment inspired by Drum Island from the anime One Piece. I created the 3D model using Tinkercad and integrated it into the website as a GLB model using HTML, CSS, and JavaScript, bringing the island-inspired birthday experience to life through a web-based 3D scene.",
     s: "HTML, CSS, JavaScript, GLB 3D model, Tinkercad",
     u: "https://happybirthdaycess-coral.vercel.app/",
-    im: [],
+    im: ["./images/happy.png"],
   },
   {
     t: "Customer Relationship Management System",
     k: "Independent project",
-    d: "CRM web app with authentication and full create, read, update and delete for customer records.",
-    s: "Django, Python, MySQL",
-    u: "",
-    im: seq("crm", 1, 6),
+    d: "A web-based CRM platform designed to manage client information, verification records, and customer support requests. Features secure authentication, complete CRUD operations for client management, and a ticketing system that allows clients to submit concerns and staff members to manage and respond to support requests. Built to streamline client record management and customer service operations.",
+    s: "Django, Python, MySQL, HTML, CSS, JavaScript",
+    u: "https://clientdesk-y0ws.onrender.com",
+    im: ["./images/CRM.png"],
     h: 1,
   },
   {
     t: "Authentication Notes",
     k: "Independent project",
-    d: "Secure notes app with login and session management. Each user only sees their own notes.",
-    s: "Flask, Python, SQLAlchemy",
-    u: "",
+    d: "A web-based secure notes application with user authentication and session management. Allows users to create, view, edit, and manage personal notes while ensuring that each account can only access its own saved information. Built with Flask and SQLAlchemy for backend logic and database operations.",
+    s: "Flask, Python, SQLAlchemy, HTML, CSS, JavaScript",
+    u: "https://my-notes-demo.onrender.com",
     im: seq("note", 1, 4),
     h: 1,
   },
   {
     t: "Website Portfolio",
     k: "Independent project",
-    d: "This responsive portfolio, built with HTML, CSS and JavaScript.",
+    d: "A personal responsive portfolio website designed to showcase my projects, technical skills, and development journey. Built with HTML, CSS, and JavaScript, featuring an interactive layout and responsive design to provide a smooth browsing experience across desktop and mobile devices.",
     s: "HTML, CSS, JavaScript",
-    u: "",
+    u: "https://ocubillofroilan-dev.github.io/ocubillo_froilan/",
     im: seq("port", 1, 6),
     h: 1,
   },
@@ -394,7 +394,7 @@ const demoBtn = (p) =>
       : `<button class="btn" disabled title="Coming soon">Demo soon</button>`;
 $("#pg").innerHTML = P.map(
   (p, i) =>
-    `<article class="pc${i > 3 ? " hid" : ""}" data-i="${i}"><div class="pm">${p.im.length ? `<img src="${p.im[0]}" alt="${p.t}" loading="lazy">` : PH(p)}${p.im.length > 1 ? `<button class="ar al" aria-label="Previous image">&#8249;</button><button class="ar arr" aria-label="Next image">&#8250;</button><span class="cn">1/${p.im.length}</span>` : ""}</div><small>${p.k}</small><h3>${p.t}</h3><p class="tg">${p.s}</p><div class="pb"><button class="btn" data-d>Description</button>${demoBtn(p)}</div></article>`,
+    `<article class="pc${i > 3 ? " hid" : ""}" data-i="${i}"><div class="pm">${p.im.length ? `<img src="${p.im[0]}" alt="${p.t}" loading="lazy">` : PH(p)}${p.im.length > 1 ? `<button class="ar al" aria-label="Previous image">&#8249;</button><button class="ar arr" aria-label="Next image">&#8250;</button><span class="cn">1/${p.im.length}</span>` : ""}</div><small>${p.k}${p.u ? '<span class="lv">Live demo</span>' : ""}</small><h3>${p.t}</h3><p class="tg">${p.s}</p><div class="pb"><button class="btn" data-d>Description</button>${demoBtn(p)}</div></article>`,
 ).join("");
 $$("#pg .pc").forEach((c) => {
   const p = P[c.dataset.i],
@@ -411,6 +411,12 @@ $$("#pg .pc").forEach((c) => {
     cn.textContent = `${n + 1}/${p.im.length}`;
   };
   img.onclick = () => gallery(p, n);
+  /* wide website screenshots are shown whole (with a small border above and below) instead of being cropped on the sides */
+  const fit = () => {
+    img.style.objectFit = img.naturalWidth / img.naturalHeight > 1.9 ? "contain" : "cover";
+  };
+  img.addEventListener("load", fit);
+  if (img.complete && img.naturalWidth) fit();
   let fails = 0;
   const dead = () => {
     img.outerHTML = PH(p);

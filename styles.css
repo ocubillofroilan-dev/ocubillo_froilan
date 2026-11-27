@@ -348,13 +348,13 @@ h1 em {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #18a957;
+  background: var(--cy);
   margin-right: 9px;
   animation: pu 1.6s infinite;
 }
 @keyframes pu {
   50% {
-    box-shadow: 0 0 0 7px rgba(24, 169, 87, 0.22);
+    box-shadow: 0 0 0 7px var(--cyg);
   }
 }
 h2::after {
@@ -840,7 +840,7 @@ h2.in::after {
   transform: scale(1.12) rotate(-6deg);
 }
 .ch i {
-  color: #4f6f5e;
+  color: #420d4a;
 }
 .ch i svg {
   width: 19px;
@@ -1199,7 +1199,7 @@ h2.in::after {
     sans-serif;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #4f6f5e;
+  color: #7b347e;
 }
 .cf b {
   font:
@@ -1211,8 +1211,8 @@ h2.in::after {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #4f6f5e;
-  color: #4f6f5e;
+  border: 1px solid #7b347e;
+  color: #7b347e;
 }
 #fs {
   max-width: none;
@@ -2087,4 +2087,134 @@ header .w {
   .dts button::after {
     inset: -20px -2px;
   }
+}
+/* ===== cyan accent: vivid cyan. Rule of thumb: cyan = live or clickable, pink = decoration.
+   Dark mode uses the vivid cyan everywhere. Light mode keeps the vivid cyan for fills, glows and
+   the big outlined "Hello", and uses two deeper cyans where small text and thin lines must stay readable. ===== */
+:root {
+  --cyv: #00e8f8; /* vivid cyan: fills, glows, big text */
+  --cy: #007282; /* light mode: cyan for small text (4.9:1) */
+  --cyl: #0096a9; /* light mode: cyan for lines and graphics (3:1) */
+  --cyt: #210535; /* dark text on a cyan fill (12:1 in both modes) */
+  --cyb: rgba(0, 150, 169, 0.55); /* soft cyan border */
+  --cyg: rgba(0, 232, 248, 0.35); /* glow */
+  --cyo: #210535; /* pixel outline around the big Hello */
+  --hg: 0 0 0 transparent; /* extra glow on Hello (dark mode only) */
+}
+[data-t="dark"] {
+  --cy: #00e8f8;
+  --cyl: #00e8f8;
+  --cyb: rgba(0, 232, 248, 0.5);
+  --cyo: #420d4a;
+  --hg: 0 0 28px rgba(0, 232, 248, 0.35);
+}
+:focus-visible {
+  outline-color: var(--cyl);
+}
+/* navigation: cyan text and underline on hover and on the active link */
+nav a {
+  position: relative;
+}
+nav a:hover,
+nav a.on {
+  color: var(--cy);
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  background: var(--cyl);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+nav a:hover::after,
+nav a.on::after {
+  transform: scaleX(1);
+}
+@media (max-width: 900px) {
+  nav a::after {
+    bottom: 7px;
+    right: auto;
+    width: 28px;
+  }
+}
+/* the line drawn around the name */
+.nm path {
+  stroke: var(--cyl);
+  stroke-width: 3;
+}
+/* "Hello": cyan with a pixel outline so it stays readable on the light background */
+#hero h1 em {
+  color: var(--cyv);
+  text-shadow:
+    -2px -2px 0 var(--cyo),
+    2px -2px 0 var(--cyo),
+    -2px 2px 0 var(--cyo),
+    2px 2px 0 var(--cyo),
+    0 -2px 0 var(--cyo),
+    0 2px 0 var(--cyo),
+    -2px 0 0 var(--cyo),
+    2px 0 0 var(--cyo),
+    var(--hg);
+}
+/* availability dot */
+.note::before {
+  background: var(--cyl);
+}
+/* buttons turn cyan on hover and while pressed (cyan fill, dark violet text) */
+.btn:not(:disabled):hover,
+.btn:not(:disabled):active {
+  background: var(--cyv);
+  border-color: var(--cyl);
+  color: var(--cyt);
+  box-shadow: 2px 2px 0 var(--sage);
+}
+.btn:not(:disabled):active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--sage);
+}
+.ib:hover {
+  border-color: var(--cyl);
+}
+/* social icons: cyan border, filled cyan on hover */
+.so a {
+  border-color: var(--cyb);
+}
+.so a:hover {
+  background: var(--cyv);
+  border-color: var(--cyv);
+  color: var(--cyt);
+}
+/* hero window: soft glow and one cyan status square in the title bar */
+.win {
+  box-shadow:
+    5px 5px 0 var(--sage),
+    0 0 34px var(--cyg);
+}
+.wb i:nth-child(3) {
+  background: var(--cyv);
+}
+/* project cards: cyan border on hover (mouse only) and a Live demo tag */
+@media (hover: hover) {
+  .pc .pm {
+    transition: border-color 0.2s;
+  }
+  .pc:hover .pm {
+    border-color: var(--cyl);
+  }
+}
+.lv {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border: 1px solid var(--cyl);
+  color: var(--cy);
+  font: 400 0.72rem/1.5 var(--pf);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
