@@ -2088,28 +2088,21 @@ header .w {
     inset: -20px -2px;
   }
 }
-/* ===== cyan accent: vivid cyan. Rule of thumb: cyan = live or clickable, pink = decoration.
-   Dark mode uses the vivid cyan everywhere. Light mode keeps the vivid cyan for fills, glows and
-   the big outlined "Hello", and uses two deeper cyans where small text and thin lines must stay readable. ===== */
+/* ===== cyan accent: ONE cyan, #35C6D8, everywhere. Rule of thumb: cyan = live or clickable, pink = decoration.
+   In light mode, cyan text sits on a dark purple chip so it stays readable. ===== */
 :root {
-  --cyv: #00e8f8; /* vivid cyan: fills, glows, big text */
-  --cy: #007282; /* light mode: cyan for small text (4.9:1) */
-  --cyl: #0096a9; /* light mode: cyan for lines and graphics (3:1) */
-  --cyt: #210535; /* dark text on a cyan fill (12:1 in both modes) */
-  --cyb: rgba(0, 150, 169, 0.55); /* soft cyan border */
-  --cyg: rgba(0, 232, 248, 0.35); /* glow */
-  --cyo: #210535; /* pixel outline around the big Hello */
-  --hg: 0 0 0 transparent; /* extra glow on Hello (dark mode only) */
+  --cy: #35c6d8;
+  --cyt: #210535; /* dark text on a cyan fill (9:1) */
+  --cyg: rgba(53, 198, 216, 0.35); /* glow made from the same cyan */
+  --cyo: #210535; /* pixel outline around the big Hello (light mode) */
+  --cyh: #210535; /* dark purple that light buttons turn into on hover and click */
 }
 [data-t="dark"] {
-  --cy: #00e8f8;
-  --cyl: #00e8f8;
-  --cyb: rgba(0, 232, 248, 0.5);
-  --cyo: #420d4a;
-  --hg: 0 0 28px rgba(0, 232, 248, 0.35);
+  --cyo: transparent;
+  --cyh: #420d4a; /* violet, so it still shows on the dark page */
 }
-:focus-visible {
-  outline-color: var(--cyl);
+[data-t="dark"] :focus-visible {
+  outline-color: var(--cy);
 }
 /* navigation: cyan text and underline on hover and on the active link */
 nav a {
@@ -2126,7 +2119,7 @@ nav a::after {
   right: 0;
   bottom: -8px;
   height: 3px;
-  background: var(--cyl);
+  background: var(--cy);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s;
@@ -2142,14 +2135,31 @@ nav a.on::after {
     width: 28px;
   }
 }
+/* light mode: cyan text on a dark purple chip (cyan alone is too faint on the light page) */
+:root:not([data-t="dark"]) nav a:hover,
+:root:not([data-t="dark"]) nav a.on {
+  background: #210535;
+  box-shadow: 0 0 0 5px #210535;
+}
+:root:not([data-t="dark"]) nav a::after {
+  display: none;
+}
+@media (max-width: 900px) {
+  :root:not([data-t="dark"]) nav a:hover,
+  :root:not([data-t="dark"]) nav a.on {
+    box-shadow:
+      -10px 0 0 #210535,
+      10px 0 0 #210535;
+  }
+}
 /* the line drawn around the name */
 .nm path {
-  stroke: var(--cyl);
+  stroke: var(--cy);
   stroke-width: 3;
 }
-/* "Hello": cyan with a pixel outline so it stays readable on the light background */
+/* "Hello": flat cyan; in light mode it gets a pixel outline so it stays readable */
 #hero h1 em {
-  color: var(--cyv);
+  color: var(--cy);
   text-shadow:
     -2px -2px 0 var(--cyo),
     2px -2px 0 var(--cyo),
@@ -2158,19 +2168,31 @@ nav a.on::after {
     0 -2px 0 var(--cyo),
     0 2px 0 var(--cyo),
     -2px 0 0 var(--cyo),
-    2px 0 0 var(--cyo),
-    var(--hg);
+    2px 0 0 var(--cyo);
 }
 /* availability dot */
 .note::before {
-  background: var(--cyl);
+  background: var(--cy);
 }
-/* buttons turn cyan on hover and while pressed (cyan fill, dark violet text) */
-.btn:not(:disabled):hover,
-.btn:not(:disabled):active {
-  background: var(--cyv);
-  border-color: var(--cyl);
+/* buttons: DARK buttons turn cyan on hover and click, LIGHT buttons turn dark violet.
+   Dark mode: the outlined button is dark, the filled one is light.
+   Light mode: the filled button is dark, the outlined one is light. */
+[data-t="dark"] .btn:not(.p):not(:disabled):hover,
+[data-t="dark"] .btn:not(.p):not(:disabled):active,
+:root:not([data-t="dark"]) .btn.p:not(:disabled):hover,
+:root:not([data-t="dark"]) .btn.p:not(:disabled):active {
+  background: var(--cy);
+  border-color: var(--cy);
   color: var(--cyt);
+  box-shadow: 2px 2px 0 var(--sage);
+}
+[data-t="dark"] .btn.p:not(:disabled):hover,
+[data-t="dark"] .btn.p:not(:disabled):active,
+:root:not([data-t="dark"]) .btn:not(.p):not(:disabled):hover,
+:root:not([data-t="dark"]) .btn:not(.p):not(:disabled):active {
+  background: var(--cyh);
+  border-color: var(--cyh);
+  color: #f4d5e0;
   box-shadow: 2px 2px 0 var(--sage);
 }
 .btn:not(:disabled):active {
@@ -2178,25 +2200,25 @@ nav a.on::after {
   box-shadow: 0 0 0 var(--sage);
 }
 .ib:hover {
-  border-color: var(--cyl);
+  border-color: var(--cy);
 }
 /* social icons: cyan border, filled cyan on hover */
 .so a {
-  border-color: var(--cyb);
+  border-color: var(--cy);
 }
 .so a:hover {
-  background: var(--cyv);
-  border-color: var(--cyv);
+  background: var(--cy);
+  border-color: var(--cy);
   color: var(--cyt);
 }
-/* hero window: soft glow and one cyan status square in the title bar */
+/* hero window: soft glow and all three title-bar squares in cyan */
 .win {
   box-shadow:
     5px 5px 0 var(--sage),
     0 0 34px var(--cyg);
 }
-.wb i:nth-child(3) {
-  background: var(--cyv);
+.wb i {
+  background: var(--cy);
 }
 /* project cards: cyan border on hover (mouse only) and a Live demo tag */
 @media (hover: hover) {
@@ -2204,17 +2226,21 @@ nav a.on::after {
     transition: border-color 0.2s;
   }
   .pc:hover .pm {
-    border-color: var(--cyl);
+    border-color: var(--cy);
   }
 }
 .lv {
   display: inline-block;
   margin-left: 8px;
   padding: 1px 7px;
-  border: 1px solid var(--cyl);
+  border: 1px solid var(--cy);
   color: var(--cy);
   font: 400 0.72rem/1.5 var(--pf);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   vertical-align: middle;
+}
+:root:not([data-t="dark"]) .lv {
+  background: #210535;
+  border-color: #210535;
 }
